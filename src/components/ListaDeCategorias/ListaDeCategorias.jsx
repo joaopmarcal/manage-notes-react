@@ -1,6 +1,12 @@
 import React, {Component} from "react";
 
 class ListaDeCategorias extends Component {
+    _handlerEventoInput(e){
+        if (e.key === 'Enter'){
+            console.log('Adiciona Categoria')
+        }
+    }
+
     render() {
         return(
         <section className="lista-categorias">
@@ -10,7 +16,12 @@ class ListaDeCategorias extends Component {
                 <li className="lista-categorias_item">Categorias</li>
                 <li className="lista-categorias_item">Categorias</li>
             </ul>
-            <input type="text" className="lista-categorias_input" placeholder="Adicionar categorias" />
+            <input
+                type="text"
+                className="lista-categorias_input"
+                placeholder="Adicionar categorias"
+                onKeyUp={this._handlerEventoInput.bind(this)}
+            />
         </section>
         );
     }
